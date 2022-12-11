@@ -99,6 +99,21 @@ Github: https://gist.github.com/Jekins/2bf2d0638163f1294637#Headers
     WantedBy=multi-user.target
     EOF
 
+
+**Настраиваем Pruning**
+
+Открываем файл: root/.nibid/config/app.toml. 
+Там корректируем значения pruning = "custom" вместо pruning = "default"
+
+    pruning = "custom"
+    # These are applied if and only if the pruning strategy is custom.
+    pruning-keep-recent = "100"
+    pruning-keep-every = "0"
+    pruning-interval = "10"
+
+Потом сохраняем файл и перезапускаем ноду  
+Данное мероприятие начинает работать с текушего момента, ранее сохраненные блоки останутся на диске
+
 Запускаем ноду
 
     systemctl daemon-reload
@@ -154,3 +169,17 @@ Cоздаем валидатора
     rm -rf /usr/bin/nibid
     rm -rf nibiru
     rm -rf .nibid
+    
+ 
+Разное
+-----------------------
+
+Команды
+
+https://nodejumper.io/nibiru-testnet/cheat-sheet
+
+Снапшот
+
+https://nodejumper.io/nibiru-testnet/sync
+
+
